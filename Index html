@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sadguru Ladies Corner | Jewellery, Cosmetics & Accessories</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Georgia, "Times New Roman", serif;
+    background:#fff9fc;
+    color:#4d174d;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* TOP BAR */
+.topbar{
+    background:#f4e3f3;
+    color:#63265f;
+    height:36px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 6%;
+    font-size:13px;
+}
+
+.topbar span{
+    margin:0 8px;
+}
+
+/* NAVBAR */
+.navbar{
+    height:105px;
+    background:#fffdfd;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 5%;
+    box-shadow:0 2px 12px rgba(100,30,90,.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    width:170px;
+    height:90px;
+    display:flex;
+    align-items:center;
+}
+
+.logo img{
+    width:100%;
+    height:auto;
+}
+
+.logo-text{
+    font-size:30px;
+    font-weight:bold;
+    color:#731f68;
+}
+
+.logo-small{
+    font-size:12px;
+    letter-spacing:2px;
+    color:#8b4381;
+}
+
+.menu{
+    display:flex;
+    gap:38px;
+    align-items:center;
+}
+
+.menu a{
+    font-size:16px;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#b52d89;
+}
+
+.menu .active{
+    background:#f5d9ef;
+    padding:11px 20px;
+    border-radius:25px;
+}
+
+.nav-icons{
+    display:flex;
+    gap:22px;
+    font-size:25px;
+}
+
+.nav-icons a:hover{
+    color:#b12a86;
+}
+
+/* HERO */
+.hero{
+    min-height:420px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:60px 8%;
+    background:
+    linear-gradient(rgba(255,235,247,.78),rgba(255,240,248,.86)),
+    url("https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=1600&q=85");
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    max-width:720px;
+}
+
+.welcome{
+    font-size:21px;
+    color:#873478;
+}
+
+.hero h1{
+    font-size:68px;
+    color:#721c67;
+    margin:8px 0;
+}
+
+.hero h2{
+    font-size:25px;
+    letter-spacing:5px;
+    color:#5d2559;
+}
+
+.marathi{
+    margin:15px 0;
+    font-size:20px;
+    color:#8d286f;
+}
+
+.tagline{
+    font-size:29px;
+    font-style:italic;
+    color:#8c2875;
+    margin:15px 0;
+}
+
+.hero-categories{
+    font-size:19px;
+    margin:15px 0 25px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 28px;
+    border-radius:30px;
+    background:#96377f;
+    color:white;
+    transition:.3s;
+    border:2px solid #96377f;
+}
+
+.btn:hover{
+    background:#711b65;
+    transform:translateY(-2px);
+}
+
+.btn-outline{
+    background:white;
+    color:#762565;
+}
+
+/* SECTION */
+section{
+    padding:50px 5%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.section-title h2{
+    font-size:32px;
+    color:#55164f;
+}
+
+.section-title p{
+    margin-top:8px;
+    color:#805f7d;
+}
+
+/* CATEGORY */
+.categories{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.category-card{
+    background:white;
+    border:1px solid #efd8eb;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 5px 18px rgba(100,30,90,.08);
+    transition:.3s;
+}
+
+.category-card:hover{
+    transform:translateY(-6px);
+}
+
+.category-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.category-info{
+    padding:18px;
+    text-align:center;
+}
+
+.category-info h3{
+    color:#681e60;
+    font-size:21px;
+}
+
+.category-info p{
+    color:#86647f;
+    font-size:14px;
+    margin-top:5px;
+}
+
+.arrow{
+    display:inline-block;
+    margin-top:12px;
+    background:#9a3a84;
+    color:white;
+    width:32px;
+    height:32px;
+    line-height:32px;
+    border-radius:50%;
+}
+
+/* PRODUCTS */
+.products{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:15px;
+}
+
+.product{
+    background:white;
+    border:1px solid #ecd9e8;
+    border-radius:12px;
+    padding:10px;
+    box-shadow:0 4px 15px rgba(100,30,90,.08);
+    transition:.3s;
+}
+
+.product:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 22px rgba(100,30,90,.14);
+}
+
+.product-img{
+    position:relative;
+}
+
+.product-img img{
+    width:100%;
+    height:185px;
+    object-fit:cover;
+    border-radius:9px;
+}
+
+.heart{
+    position:absolute;
+    top:8px;
+    right:8px;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#a12d83;
+    box-shadow:0 2px 8px #aaa;
+}
+
+.product h3{
+    font-size:17px;
+    margin:12px 5px;
+    color:#5f2058;
+}
+
+.view-btn{
+    display:block;
+    text-align:center;
+    background:#93417f;
+    color:white;
+    border-radius:20px;
+    padding:9px;
+    font-size:14px;
+    margin-top:10px;
+}
+
+.view-btn:hover{
+    background:#701d63;
+}
+
+/* WHY US */
+.why{
+    background:#f7e8f5;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    text-align:center;
+}
+
+.why-item{
+    padding:20px;
+    border-right:1px solid #dcbfd8;
+}
+
+.why-item:last-child{
+    border:none;
+}
+
+.icon{
+    width:60px;
+    height:60px;
+    margin:auto;
+    border-radius:50%;
+    background:#f0d5ed;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+}
+
+.why-item h3{
+    margin:12px 0 6px;
+}
+
+/* CONTACT */
+.contact{
+    background:#602255;
+    color:white;
+    padding:45px 6%;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.contact-box{
+    padding:10px 20px;
+    border-right:1px solid rgba(255,255,255,.3);
+}
+
+.contact-box:last-child{
+    border:none;
+}
+
+.contact-box h3{
+    margin-bottom:12px;
+}
+
+.contact-box a{
+    color:white;
+}
+
+.contact-btn{
+    display:inline-block;
+    margin-top:12px;
+    padding:10px 20px;
+    background:#fff;
+    color:#69235e !important;
+    border-radius:25px;
+    margin-right:7px;
+}
+
+.whatsapp{
+    background:#25D366;
+    color:white !important;
+}
+
+/* FOOTER */
+footer{
+    background:#f0d8eb;
+    color:#63315d;
+    padding:15px 6%;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+}
+
+/* MOBILE */
+@media(max-width:1000px){
+
+    .menu{
+        gap:15px;
+    }
+
+    .products{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:700px){
+
+    .topbar{
+        display:none;
+    }
+
+    .navbar{
+        height:auto;
+        padding:12px 20px;
+        flex-wrap:wrap;
+    }
+
+    .logo{
+        width:140px;
+    }
+
+    .menu{
+        order:3;
+        width:100%;
+        justify-content:center;
+        gap:15px;
+        margin-top:10px;
+        overflow-x:auto;
+    }
+
+    .menu a{
+        font-size:13px;
+        white-space:nowrap;
+    }
+
+    .nav-icons{
+        font-size:21px;
+    }
+
+    .hero{
+        min-height:500px;
+        padding:50px 20px;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero h2{
+        font-size:18px;
+        letter-spacing:3px;
+    }
+
+    .tagline{
+        font-size:24px;
+    }
+
+    .categories{
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+    }
+
+    .category-card img{
+        height:130px;
+    }
+
+    .products{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+    }
+
+    .product-img img{
+        height:145px;
+    }
+
+    .product h3{
+        font-size:14px;
+    }
+
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .why-item{
+        border-right:none;
+        border-bottom:1px solid #dcbfd8;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .contact-box{
+        border-right:none;
+        border-bottom:1px solid rgba(255,255,255,.3);
+        padding-bottom:20px;
+    }
+
+    footer{
+        flex-direction:column;
+        gap:10px;
+        text-align:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+    <div>
+        ♡ Beauty &nbsp; ♥ Style &nbsp; ♥ Confidence
+    </div>
+
+    <div>
+        🚚 Fast & Safe Delivery
+        <span>|</span>
+        ♡ Your Beauty, Our Priority
+    </div>
+</div>
+
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+
+    <a href="#home" class="logo">
+        <div>
+            <div class="logo-text">Sadguru♡</div>
+            <div class="logo-small">LADIES CORNER</div>
+        </div>
+    </a>
+
+    <div class="menu">
+        <a href="#home" class="active">Home</a>
+        <a href="#jewellery">Jewellery</a>
+        <a href="#cosmetics">Cosmetics</a>
+        <a href="#accessories">Accessories</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="nav-icons">
+        <a href="#products">⌕</a>
+        <a href="#contact">♡</a>
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="welcome">— Welcome to —</div>
+
+        <h1>Sadguru♡</h1>
+
+        <h2>LADIES CORNER</h2>
+
+        <div class="marathi">
+            विश्वास आमचा, सेवा आमची
+        </div>
+
+        <div class="tagline">
+            Style That Makes You Shine
+        </div>
+
+        <div class="hero-categories">
+            Jewellery &nbsp; ♥ &nbsp;
+            Cosmetics &nbsp; ♥ &nbsp;
+            Accessories
+        </div>
+
+        <div class="buttons">
+            <a href="#products" class="btn">Shop Now →</a>
+            <a href="#categories" class="btn btn-outline">
+                Explore Collection
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+<section id="categories">
+
+    <div class="section-title">
+        <h2>❦ Shop by Category ❦</h2>
+        <p>Your One Stop Destination for All Things Beautiful</p>
+    </div>
+
+    <div class="categories">
+
+        <a href="#jewellery" class="category-card">
+            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=85">
+            <div class="category-info">
+                <h3>Jewellery</h3>
+                <p>Timeless Elegance</p>
+                <span class="arrow">→</span>
+            </div>
+        </a>
+
+        <a href="#bangles" class="category-card">
+            <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=85">
+            <div class="category-info">
+                <h3>Bangles</h3>
+                <p>For Every Occasion</p>
+                <span class="arrow">→</span>
+            </div>
+        </a>
+
+        <a href="#cosmetics" class="category-card">
+            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=700&q=85">
+            <div class="category-info">
+                <h3>Cosmetics</h3>
+                <p>Look Good Feel Good</p>
+                <span class="arrow">→</span>
+            </div>
+        </a>
+
+        <a href="#accessories" class="category-card">
+            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=700&q=85">
+            <div class="category-info">
+                <h3>Accessories</h3>
+                <p>Small Touches, Big Style</p>
+                <span class="arrow">→</span>
+            </div>
+        </a>
+
+    </div>
+</section>
+
+
+<!-- PRODUCTS -->
+<section id="products">
+
+    <div class="section-title">
+        <h2>❦ Our Collection ❦</h2>
+        <p>Beautiful products selected specially for you</p>
+    </div>
+
+    <div class="products">
+
+        <!-- PRODUCT 1 -->
+        <div class="product" id="jewellery">
+            <div class="product-img">
+                <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=85">
+                <div class="heart">♡</div>
+            </div>
+            <h3>Stone Necklace Set</h3>
+            <a href="#contact" class="view-btn">View Product</a>
+        </div>
+
+        <!-- PRODUCT 2 -->
+        <div class="product" id="bangles">
+            <div class="product-img">
+                <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=600&q=85">
+                <div class="heart">♡</div>
+            </div>
+            <h3>Designer Bangles Set</h3>
+            <a href="#contact" class="view-btn">View Product</a>
+        </div>
+
+        <!-- PRODUCT 3 -->
+        <div class="product" id="cosmetics">
+            <div class="product-img">
+                <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=600&q=85">
+                <div class="heart">♡</div>
+            </div>
+            <h3>Matte Lipstick</h3>
+            <a href="#contact" class="view-btn">View Product</a>
+        </div>
+
+        <!-- PRODUCT 4 -->
+        <div class="product">
+            <div class="product-img">
+                <img src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=600&q=85">
+                <div class="heart">♡</div>
+            </div>
+            <h3>Face Wash & Skincare</h3>
+            <a href="#contact" class="view-btn">View Product</a>
+        </div>
+
+        <!-- PRODUCT 5 -->
+        <div class="product" id="accessories">
+            <div class="product-img">
+                <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=600&q=85">
+                <div class="heart">♡</div>
+            </div>
+            <h3>Hair Accessories</h3>
+            <a href="#contact" class="view-btn">View Product</a>
+        </div>
+
+        <!-- PRODUCT 6 -->
+        <div class="product">
+            <div class="product-img">
+                <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=600&q=85">
+                <div class="heart">♡</div>
+            </div>
+            <h3>Elegant Earrings</h3>
+            <a href="#contact" class="view-btn">View Product</a>
+        </div>
+
+        <!-- PRODUCT 7 -->
+        <div class="product">
+            <div class="product-img">
+                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=85">
+                <div class="heart">♡</div>
+            </div>
+            <h3>Fashion Earrings</h3>
+            <a href="#contact" class="view-btn">View Product</a>
+        </div>
+
+        <!-- PRODUCT 8 -->
+        <div class="product">
+            <div class="product-img">
+                <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=600&q=85">
+                <div class="heart">♡</div>
+            </div>
+            <h3>Fashion Bracelet</h3>
+            <a href="#contact" class="view-btn">View Product</a>
+        </div>
+
+        <!-- PRODUCT 9 -->
+        <div class="product">
+            <div class="product-img">
+                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=85">
+                <div class="heart">♡</div>
+            </div>
+            <h3>Beauty Essentials</h3>
+            <a href="#contact" class="view-btn">View Product</a>
+        </div>
+
+        <!-- PRODUCT 10 -->
+        <div class="product">
+            <div class="product-img">
+                <img src="https://images.unsplash.com/photo-1590156221820-ff2f6a6b5f7c?auto=format&fit=crop&w=600&q=85">
+                <div class="heart">♡</div>
+            </div>
+            <h3>Hair & Beauty Accessories</h3>
+            <a href="#contact" class="view-btn">View Product</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WHY SHOP WITH US -->
+<section class="why">
+
+    <div class="section-title">
+        <h2>❦ Why Shop With Us? ❦</h2>
+        <p>Because You Deserve the Best</p>
+    </div>
+
+    <div class="why-grid">
+
+        <div class="why-item">
+            <div class="icon">♢</div>
+            <h3>Quality Products</h3>
+            <p>Only the best for you</p>
+        </div>
+
+        <div class="why-item">
+            <div class="icon">₹</div>
+            <h3>Affordable Prices</h3>
+            <p>Beauty within your budget</p>
+        </div>
+
+        <div class="why-item">
+            <div class="icon">♡</div>
+            <h3>Friendly Service</h3>
+            <p>We care for your happiness</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+    <div class="contact-grid">
+
+        <div class="contact-box">
+
+            <h3>📍 Visit Our Shop</h3>
+
+            <p>
+                Ashoknagar, Bhaji Market<br>
+                Nagre Chowk, Behind Kadam Jewellers<br>
+                Nashik, Maharashtra
+            </p>
+
+            <!-- GOOGLE MAPS CLICKABLE -->
+            <a
+            class="contact-btn"
+            target="_blank"
+            href="https://www.google.com/maps/search/?api=1&query=Ashoknagar%20Bhaji%20Market%20Nagre%20Chowk%20Behind%20Kadam%20Jewellers%20Nashik">
+                📍 Get Directions
+            </a>
+
+        </div>
+
+
+        <div class="contact-box">
+
+            <h3>📞 Contact Us</h3>
+
+            <p>9667486365</p>
+
+            <!-- CALL BUTTON -->
+            <a
+            class="contact-btn"
+            href="tel:+919667486365">
+                📞 Call Now
+            </a>
+
+            <!-- WHATSAPP BUTTON -->
+            <a
+            class="contact-btn whatsapp"
+            target="_blank"
+            href="https://wa.me/919667486365?text=Hello%20Sadguru%20Ladies%20Corner,%20I%20want%20to%20know%20about%20your%20products.">
+                💬 WhatsApp
+            </a>
+
+        </div>
+
+
+        <div class="contact-box">
+
+            <h3>♡ Follow Us</h3>
+
+            <p>Connect with Sadguru Ladies Corner</p>
+
+            <!-- YAHAN APNA INSTAGRAM LINK DALO -->
+            <a
+            class="contact-btn"
+            target="_blank"
+            href="https://www.instagram.com/">
+                Instagram
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div>
+        © 2026 Sadguru Ladies Corner. All rights reserved.
+    </div>
+
+    <div>
+        Jewellery &nbsp; ♥ &nbsp;
+        Cosmetics &nbsp; ♥ &nbsp;
+        Accessories
+    </div>
+
+</footer>
+
+
+<script>
+
+/* PRODUCT BUTTON */
+document.querySelectorAll(".view-btn").forEach(function(button){
+
+    button.addEventListener("click",function(){
+
+        alert(
+            "Product ki availability aur details ke liye WhatsApp ya Call karein."
+        );
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
